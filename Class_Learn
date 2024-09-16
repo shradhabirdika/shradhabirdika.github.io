@@ -40,10 +40,12 @@ Second, we add a link to the bookmark within the same page. For example, we add 
                 color: goldenrod;
             }
 
-            
+            nav ul li a{
+                color: deeppink;
+            }
 
             a:visited{
-                color:black
+                color:indianred
             }
 
             a:hover{
@@ -51,19 +53,18 @@ Second, we add a link to the bookmark within the same page. For example, we add 
             }
         </style>
         
-        <!-- Link to all css stylesheets -->
         <link rel="stylesheet" href="css_self.css">
+
         <link rel="stylesheet" href="css_files/nav.css">
-
-
 
     </head>
     <body>
+         
 
         <div class="nav">
             <nav>
                 <ul>
-                    <a href="#AboutMe">
+                    <a href="index.html">
                         <header id="AboutMe"> 
                             <strong> About Me </strong>
                         </header></a></li>
@@ -80,9 +81,42 @@ Second, we add a link to the bookmark within the same page. For example, we add 
             </nav>
         </div>
 
-        <h1 id="AboutMe" style="color: rgb(12, 51, 12);"> About Me: </h1>
 
+        <div>
+            <header id="Edu" style="color: brown"><strong> Education </strong> </header>
+            
+            <figure>
+                <img src="Images\ClarkU_Logo.png" alt="" width="50" height="50">
+                <figcaption class="edu"> Clark University </figcaption>
+            </figure>
+
+            <p class = 'edu'>
+                <strong> Accelarated B.A./Master of Science in Geographic Information Science (MS-GIS) - Clark University; <i> Worcester, MA, USA  [GPA: 3.9] </i></strong>
+            </p>
+
+        </div>
         
+
+        <div>
+            
+        </div>
+        
+        <div>
+
+    
+
+            <header id="Awards" style="color: brown"> <strong> Honors and Awards </strong></header>
+        </div>
+        
+
+
+
+        <p style="background-image: url(Images/ClarkU_BG.jpeg)"> Clark University is a private research 
+            <br> university in Worcester, Massachusetts. Founded in 1887 
+            <br> with a large endowment from its namesake Jonas Gilman 
+            <br> Clark, a prominent businessman, Clark was one of the first 
+            <br> modern research universities in the United States. 
+        </p>
 
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
@@ -94,7 +128,10 @@ Second, we add a link to the bookmark within the same page. For example, we add 
         <footer>
 
             <p>
-                <h4> Shradha Birdika </h4>
+                Shradha Birdika
+            </p>
+
+            <p>
                 <a href="mailto:SBirdika@clarku.edu"> SBirdika@clarku.edu </a>
             </p>
 

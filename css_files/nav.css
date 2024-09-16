@@ -1,0 +1,21 @@
+.nav{
+border: double;
+margin-top: 25px;
+border-width: 5px;
+border-color: black;
+background-color: rgb(127, 127, 87);
+}
+
+.nav ul{
+justify-content: center;
+display: flex;
+gap: 250px;
+color: black;
+list-style: none;
+}
+
+
+.nav ul a{
+    font-size: 25px;
+    color: black;
+}
