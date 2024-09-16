@@ -126,15 +126,10 @@ Second, we add a link to the bookmark within the same page. For example, we add 
         <script src="" async defer></script>
 
         <footer>
-
             <p>
-                Shradha Birdika
-            </p>
-
-            <p>
+                <li> Shradha Birdika </li>
                 <a href="mailto:SBirdika@clarku.edu"> SBirdika@clarku.edu </a>
             </p>
-
         </footer>
 
     </body>
