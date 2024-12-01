@@ -1,111 +1,471 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shradha Birdika</title>
 
-<!-- 
-10.1 Bookmark for header
-It is created using the <a> tag with an <id> attribute to connect a section and nagavitation title
-First, we create a bookmark for a element using id attribute
-<h1 id = "Pro">Projects</h1>
-Second, we add a link to the bookmark within the same page. For example, we add a link to the Projects in <header>
-<header><a href="#Pro">Projects</a></header>
--->
-
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Shradha Birdika</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-
-        <style>
-            body{
-                background-color: wheat;
-                font-family: Georgia, 'Times New Roman', Times, serif;
-            }
+    <style>
         
-            a:visited{
-                color:black
+        body {
+            background-color: wheat;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        a:hover {
+            cursor: pointer;
+        }
+       
+        .button_nav {
+            height: 50px;
+            width: 200px;
+            font-size: 20px;
+            background-color: wheat;
+            color: rgb(76, 48, 35);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            border: 2px solid wheat;
+            border-radius: 5px;
+            margin: 5px;
+            padding: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .button_nav:hover {
+            background-color: rgb(76, 48, 35);
+            color: white;
+        }
+
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            background-color: rgb(76, 48, 35);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .top-left {
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: wheat;
+        }
+
+        .nav_buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        #backtoTop {
+            height: 50px;
+            width: 200px;
+            font-size: 25px;
+            background-color: rgb(76, 48, 35);
+            color: wheat;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            border: 2px solid wheat;
+            padding: 2px;
+            cursor: pointer;
+        }
+
+        #backtoTop:hover {
+            background-color: rgb(76, 48, 35);
+            color: white;
+        }
+
+        .about-container {
+            margin: 50px auto 20px;
+            padding: 20px;
+            max-width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .about-image {
+            flex: 0 0 350px;
+            text-align: center;
+        }
+
+        .about-text {
+            flex: 1;
+            font-size: 18px;
+            color: rgb(76, 48, 35);
+            line-height: 1.6;
+        }
+
+        .about-text ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-text li {
+            margin-bottom: 20px;
+        }
+
+        .education-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #f9f4e6;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .clark-logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100px;
+            height: auto;
+        }
+        .experience-container { max-width: 1200px; margin: 0 auto; padding: 20px; text-align: center; }
+        .experience-section { margin-bottom: 40px; }
+        .experience-section h3 { color: rgb(76, 48, 35); font-size: 24px; }
+        .experience-section p, .experience-section li { color: rgb(76, 48, 35); font-size: 18px; line-height: 1.6; }
+        .project-description { margin-top: 10px; }
+        .dashboard { text-align: center; margin: 20px 0; }
+        iframe { width: 100%; height: 600px; border: none; margin: 20px 0; }
+
+        #WorkEx {
+            text-align: center;
+        }
+
+        .experience-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .experience-images img {
+            max-width: 45%;
+            cursor: pointer;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .button_nav, #backtoTop {
+                width: 100%;
+                font-size: 18px;
             }
 
-            a:hover{
-                cursor: pointer
+            .about-container, .education-container, .experience-container {
+                padding: 10px;
             }
-        </style>
-        
-        <!-- Link to all css stylesheets -->
-        <link rel="stylesheet" href="css_self.css">
-        <link rel="stylesheet" href="css_files/nav.css">
+        }
+
+
+    </style>
 
 
 
-    </head>
-    <body>
-
-        <div class="nav">
-            <nav>
-                <ul>
-                    <a href="#AboutMe">
-                        <header id="AboutMe"> 
-                            <strong> About Me </strong>
-                        </header></a></li>
-                    <a href="Edu.html" target="_blank"> <!-- target="_blank" creates a new tab --> 
-                        <header id="Edu"> 
-                            <strong> Education </strong>
-                        </header></a></li>
-                    <a href="WorkEx.html" target="_blank"> <!-- target="_blank" creates a new tab -->
-                        <header id="Work"> 
-                            <strong> Work Experience </strong> 
-                        </header>
-                    </a>
-                </ul>
-            </nav>
+</head>
+<body>
+    
+    <!-- Top Navigation -->
+    <div class="nav-container">
+        <div class="top-left">
+            <strong>Hello, I'm Shradha!</strong>
         </div>
+        <div class="nav_buttons">
+            <button class="button_nav" onclick="scrollToSection('Edu')"><strong>Education</strong></button>
+            <button class="button_nav" onclick="scrollToSection('WorkEx')"><strong>Past Experiences</strong></button>
+            <button class="button_nav" onclick="scrollToSection('Skills')"><strong>Skills</strong></button>
+        </div>
+    </div>
 
-
-        <p id="AboutMe" style="font-size:50px; color:rgb(76, 48, 35); text-align:center; margin-top:40px;"> 
-            <strong> About Me </strong> 
-        </p>
-
-
-        <p >
-            <figure style="float: left; margin-top: 0px">
-                <img src="Images\headshot2.jpg" alt="Headshot" width="350" height="350">
+    <!-- About Me Section -->
+    <div class="about-container" style="padding-top:100px;">
+        <div class="about-image">
+            <figure>
+                <img src="Images/headshot2.jpg" alt="Headshot" width="350" height="350">
                 <figcaption>
-                    <li style="list-style: none; margin-top: 10px; font-size: 20px; color:black;">
+                    <p>
                         <strong>Connect via LinkedIn:</strong>
-                        <a href="https://www.linkedin.com/in/shradha-birdika/" target="_blank" style="font-size: 18px; color:rgb(76, 48, 35);"> Shradha-Birdika </a>
-                        </li>
-            
-                        <li style="list-style: none; font-size: 20px; color:black;">
-                        <strong>Email:</strong> 
-                        <a href="mailto:SBirdika@clarku.edu" target="_blank" style="font-size: 18px; color:rgb(76, 48, 35);"> SBirdika@clarku.edu </a>
-                        </li>
+                        <a href="https://www.linkedin.com/in/shradha-birdika/" target="_blank" style="color:rgb(76, 48, 35);">Shradha-Birdika</a>
+                    </p>
+                    <p>
+                        <strong>Email:</strong>
+                        <a href="mailto:SBirdika@clarku.edu" target="_blank" style="color:rgb(76, 48, 35);">SBirdika@clarku.edu</a>
+                    </p>
                 </figcaption>
             </figure>
+        </div>
+        <div class="about-text">
+            <ul>
+                <li>I am a dedicated GIS professional passionate about leveraging geospatial technology to enhance environmental management and urban planning. With an accelerated Master's in Geographic Information Science (GIS) from Clark University, I bring a strong academic foundation, hands-on experience in spatial data analysis, and a commitment to sustainable development.</li>
+                <li>I thrive in roles where I can use my skills in GIS, data visualization, and analysis to solve complex problems and drive impactful change. Proficient in tools like ESRI ArcGIS, Google Earth Engine, RStudio, and AutoCAD, and fluent in Python and Java, I am eager to connect with professionals and organizations committed to using geospatial insights for sustainable development.</li>
+                <li>I welcome any opportunity to connect and/or collaborate on projects based on GIS applications or environmental consulting!</li>
+            </ul>
+        </div>
+    </div>
 
-            <li style="list-style: none; margin-top: 70px; margin-right: 40px; font-size: 18px; color:rgb(76, 48, 35);">
-                I am a dedicated GIS professional passionate about leveraging geospatial technology to enhance environmental management and urban planning. With an accelerated Master's in Geographic Information Science (GIS) from Clark University, I bring a strong academic foundation, hands-on experience in spatial data analysis, and a commitment to sustainable development.
-                <br>
-                <br>
-                Currently, I am a student intern at the Massachusetts Department of Environmental Protection's Total Maximum Daily Load Section, where I develop comprehensive databases and GIS-based maps to support watershed management and environmental planning. My background also includes being a teaching assistant for Python programming for GIS at the graduate level, managing interior mapping projects, and conducting research on urban heat islands and environmental justice.
-                <br>
-                <br>
-                I thrive in roles where I can use my skills in GIS, data visualization, and analysis to solve complex problems and drive impactful change. Proficient in tools like ESRI ArcGIS, Google Earth Engine, RStudio, and AutoCAD, and fluent in Python and Java, I am eager to connect with professionals and organizations committed to using geospatial insights for sustainable development.
-                <br>
-                <br>
-                I welcome any opportunity to connect and/or collaborate on projects based on GIS applications or environmental consulting!
-            </li>
-        </p>
-        
+    <!-- Education Section -->
+    <section id="Edu">
+        <h2 style="font-size:50px; color:rgb(76, 48, 35); text-align:center; margin-top:50px;">Education</h2>
+        <div class="education-container">
+            <a href="https://www.clarku.edu/" target="_blank">
+                <img src="Images/ClarkU_Logo.png" alt="Clark University Logo" class="clark-logo">
+            </a>
+            <div style="text-align: left; margin-bottom: 20px;">
+                <h3 style="color: rgb(76, 48, 35); font-size: 24px; margin-bottom: 10px;">Clark University</h3>
+                <p style="color: rgb(76, 48, 35); font-size: 18px; margin: 5px 0;">
+                    <strong>Master of Science:</strong> Geographic Information Science (MS-GIS) <br>
+                    <em>Expected Graduation:</em> May 2025
+                </p>
+                <p style="color: rgb(76, 48, 35); font-size: 18px; margin: 5px 0;">
+                    <strong>Bachelor of Arts:</strong> Geography, GIS concentration, Economics minor <br>
+                    <em>Graduated Summa Cum Laude:</em> May 2024
+                </p>
+                <p style="color: rgb(76, 48, 35); font-size: 18px; margin: 5px 0;">
+                    <strong>Location:</strong> Worcester, Massachusetts
+                </p>
+            </div>
+            <hr style="border: 0; border-top: 1px solid rgb(76, 48, 35); margin: 20px 0;">
+            <div>
+                <h3 style="color: rgb(76, 48, 35); font-size: 22px; margin-bottom: 15px;">Honors and Awards</h3>
+                <ul style="color: rgb(76, 48, 35); font-size: 18px; line-height: 1.8; padding-left: 20px;">
+                    <li><strong>Alpha Sigma Chapter of Gamma Theta Upsilon Membership</strong> <br>
+                        <em>Issued by International Honor Society in Geography · Mar 2024</em>
+                    </li>
+                    <li><strong>Phi Beta Kappa Society Membership</strong> <br>
+                        <em>Issued by Phi Beta Kappa Society · Mar 2024</em>
+                    </li>
+                    <li><strong>High Honors for Geography Honors Thesis</strong> <br>
+                        <em>Issued by Clark University · Dec 2023</em>
+                    </li>
+                    <li><strong>2024 National Council for Geographic Education (NCGE) Excellence in Scholarship Award</strong> <br>
+                        <em>Issued by National Council for Geographic Education (NCGE) · May 2021</em>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <script src="" async defer></script>
-    </body>
+    <section id="WorkEx" style="margin-top: 120px;"> 
+        <h2 style="font-size:50px; color:rgb(76, 48, 35); text-align:center; margin-top:40px;">Past Experiences</h2>
+        <div class="experience-container" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+            <!-- MassDEP Experience -->
+            <div style="padding-bottom: 35px;" >
+                <h3 style="color: rgb(76, 48, 35); font-size: 24px;">
+                    <a href="https://www.mass.gov/orgs/massachusetts-department-of-environmental-protection" target="_blank" style="color:rgb(76, 48, 35); text-decoration: underline;">Massachusetts Department of Environmental Protection (MassDEP)</a>
+                </h3>
+                <p style="color: rgb(76, 48, 35); font-size: 18px;">
+                    <strong>Role:</strong> Contracted Student Intern – Total Maximum Daily Load Section<br>
+                    <strong>Duration:</strong> June 2024 – December 2024
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                    <div style="flex: 1;">
+                        <h4 style="color: rgb(76, 48, 35); font-size: 20px; margin-bottom: 10px;">Project 1: Local Stormwater Management Database</h4>
+                        <p style="color: rgb(76, 48, 35); font-size: 18px; line-height: 1.6;">
+                            Developed a comprehensive references database integrating stormwater management bylaws for over 500 municipalities in priority Massachusetts watersheds. Automated database updates using Python scripts to process responses from Microsoft Forms, streamlining data management for environmental planning. Created targeted outreach materials, including detailed maps of pathogen-impaired waterbodies, to engage local governments and planning agencies in ordinance updates.
+                        </p>
+                        <div>
+                            <div class="experience-images" style="display: flex;  gap: 10px;">
+                                <img src="Images/Slide2.PNG" alt="Slide 2" class="zoomable-slide" style="width: 45%; cursor: pointer;">
+                                <img src="Images/Slide3.PNG" alt="Slide 3" class="zoomable-slide" style="width: 45%; cursor: pointer;">
+                            </div>
+                            <p style="color: rgb(76, 48, 35); font-size: 16px; margin-top: 5px;">Click on images to zoom in, click again to zoom out.</p>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <h4 style="color: rgb(76, 48, 35); font-size: 20px; margin-bottom: 10px;">Project 2: Massachusetts Estuaries Project</h4>
+                        <p style="color: rgb(76, 48, 35); font-size: 18px; line-height: 1.6;">
+                            Designed and generated maps to support the Massachusetts Estuaries Project (MEP), which evaluates nitrogen load reductions required for ecosystem health in southeastern Massachusetts estuaries. The output facilitated actionable insights for sustainable estuarine management and restoration.
+                        </p>
+                        <div class="experience-images">
+                            <a href="https://www.mass.gov/guides/the-massachusetts-estuaries-project-and-reports?_gl=1*16k19st*_ga*NTY0ODg4MjEwLjE2OTIwNDY1MzU.*_ga_MCLPEGW7WM*MTczMjY3NTM0NS43LjAuMTczMjY3NTM0NS4wLjAuMA.." target="_blank">
+                                <img src="Images/MEP.jpg" alt="Massachusetts Estuaries Project Map" style="width: 100%; max-width: 300px; margin: 10px 0; border: 2px solid rgb(76, 48, 35);">
+                            </a>
+                        </div>
+                        <p style=" color: rgb(76, 48, 35); font-size: 16px; margin-top: 5px;">Click image to view the project website.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience 2: Human Environment Research Observatory -->
+            <div class="experience-section" style="padding-bottom: 35px;">
+                <h3 style="color: rgb(76, 48, 35); font-size: 24px;">
+                    <a href="https://www.clarku.edu/departments/hero-program/" target="_blank" style="margin-top: 100px; color:rgb(76, 48, 35); text-decoration: underline">Human Environment Research Observatory; Worcester, MA</a>
+                </h3>
+                <p style="margin-bottom:45px"><strong>Role:</strong> Environmental Research Fellow<br><strong>Duration:</strong> May 2022 – December 2023</p>
+                <div style="margin-bottom:45px">
+                    <h4 style="color: rgb(76, 48, 35); font-size: 20px; margin-bottom: 10px;">Project 1: Urban Heat Island Effect</h4>
+                    <p class="project-description">
+                        <li>Facilitated a study focused on the Urban Heat Island effect in environmental justice areas of Rhode Island. </li>
+                        <li>Conducted street tree surveys and analyzed air temperature and air quality data to identify key factors contributing to temperature disparities, paving the way for informed mitigation policies.</li>
+                    </p>
+                </div>
+                <div>
+                    <h4 style="color: rgb(76, 48, 35); font-size: 20px; margin-bottom: 10px;">Project 2: Impacts and Perceptions of Environmental Changes in the Hadwen Arboretum, Clark University 
+                        <br>
+                        (Honors Thesis Project)
+                    </h4>
+                    <p class="project-description"> 
+                        Conducted a participatory GIS (P-GIS) research analyzing community feedback and perceptions of the <a href="https://www.clarku.edu/arboretum/" target="_blank" style="color:rgb(76, 48, 35); text-decoration: underline">Hadwen Arboretum</a>, uncovering insights for sustainable greenspace management and urban planning. 
+                        <br>
+                        The dashboard below shows the Map for Public Perception of Hadwen Arboretum, Clark University, an end result of the research analysis. Click on the 'More Tools' button from the top-right corner of the dashboard window to filter the layer visibility. The layers 'MostAttentionAreas', 'MostDislikedAreas', and 'MostLikedAreas' represent the number of times an area within the arboretum was identified as needing more attention, disliked, or liked, respectively, by the interviewees. Scroll through the legend on the left edge of the dashboard to identify other features of the arboretum.
+                    </p>
+                    <div class="dashboard">
+                        <iframe src="https://www.arcgis.com/apps/dashboards/f27d091d30e8493c80b40f9a8e3185b4"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience 3: Teaching Assistant at Clark University -->
+            <div class="experience-section" style="padding-bottom: 35px;">
+                <h3 style="color: rgb(76, 48, 35); font-size: 24px;">
+                    <a href="https://www.clarku.edu/departments/geography/" target="_blank" style="margin-top: 100px; color:rgb(76, 48, 35); text-decoration: underline">Graduate School of Geography, Clark University</a>
+                </h3>
+                <p><strong>Role:</strong> Teaching Assistant – Python Programming and Computer Programming for GIS<br><strong>Duration:</strong> August 2024 – December 2024</p>
+                <div>
+                    <h4 style="color: rgb(76, 48, 35); font-size: 20px; margin-bottom: 10px;">Responsibilities</h4>
+                    <p class="project-description">
+                        <li>Conducted tutorials and provided personalized guidance to over ten graduate students, improving their proficiency in Python programming for GIS applications, including spatial analysis, data visualization, and geoprocessing techniques.</li>
+                        <li>Developed and evaluated assignments alongside the course instructor, ensuring fair grading and enhancing course outcomes through personalized feedback and support.</li>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Experience 4: Manatee County Government -->
+            <div class="experience-section" style="padding-bottom: 15px;">
+                <h3 style="color: rgb(76, 48, 35); font-size: 24px;">
+                    <a href="https://www.mymanatee.org/" target="_blank" style="margin-top: 100px; color:rgb(76, 48, 35); text-decoration: underline">Manatee County Government; Bradenton, FL</a>
+                </h3>
+                <p><strong>Role:</strong> Interior Mapping Intern<br><strong>Duration:</strong> May 2023 – August 2023</p>
+                <div>
+                    <h4 style="color: rgb(76, 48, 35); font-size: 20px; margin-bottom: 10px;">Responsibilities</h4>
+                    <p class="project-description">
+                        <li>Led an interior mapping project for the Energy and Sustainability Division, standardizing floor plans to CAD files for seamless integration into Indoor GIS software.</li> 
+                        <li>Calculated and verified architectural measurements to enhance property management decision-making, impacting budget planning, space utilization, and energy audits.</li> 
+                        <li>Presented findings to County Leadership using engaging visuals and accessible language.</li>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="Skills" style="text-align:center;">
+        <h2 style="font-size:50px; color:rgb(76, 48, 35); text-align:center; ">Skills</h2>
+        <div class="skills-container" style="max-width: 1200px; margin: 0 auto;">
+            <div style="margin-bottom: 20px;">
+                <h3 style="color: rgb(76, 48, 35); font-size: 24px;">Data Management, Visualization, and Analysis Tools</h3>
+                <p style="color: rgb(76, 48, 35); font-size: 18px;">ESRI ArcGIS Pro, ESRI ArcGIS Online Suite, QGIS, Google Earth Engine, RStudio, Microsoft Business Suite, Microsoft Power Platform, Vensim, TerrSet, NVivo, AutoCAD</p>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <h3 style="color: rgb(76, 48, 35); font-size: 24px;">Programming Languages</h3>
+                <p style="color: rgb(76, 48, 35); font-size: 18px;">Python, HTML, SQL, CSS, JavaScript</p>
+            </div>
+            <div style="padding-bottom: 100px;">
+                <h3 style="color: rgb(76, 48, 35); font-size: 24px;">Interpersonal Skills</h3>
+                <p style="color: rgb(76, 48, 35); font-size: 18px;">Project Management, Critical Thinking, Problem Solving, Effective Communication</p>
+            </div>
+        </div>
+    </section>
+    
+
+     <!-- Back to Top Button -->
+     <div style="width: 100%; display: flex; justify-content: center;">
+        <button id="backtoTop">Back To Top</button>
+    </div>
+    
+    <script>
+        const zoomableSlides = document.querySelectorAll('.zoomable-slide');
+    
+        zoomableSlides.forEach(slide => {
+            slide.dataset.zoomed = 'false';
+    
+            slide.addEventListener('click', function () {
+                if (this.dataset.zoomed === 'false') {
+                    this.style.position = 'fixed';
+                    this.style.top = '50%';
+                    this.style.left = '50%';
+                    this.style.transform = 'translate(-50%, -50%)';
+                    this.style.width = '56%';
+                    this.style.height = 'auto';
+                    this.style.zIndex = '1000';
+                    this.style.boxShadow = '0px 4px 6px rgba(0, 0, 0, 0.3)';
+                    this.dataset.zoomed = 'true';
+                } else {
+                    resetZoom(this);
+                }
+            });
+        });
+    
+        document.addEventListener('click', function (event) {
+            if (!event.target.classList.contains('zoomable-slide')) {
+                zoomableSlides.forEach(slide => {
+                    if (slide.dataset.zoomed === 'true') {
+                        resetZoom(slide);
+                    }
+                });
+            }
+        });
+    
+        function resetZoom(image) {
+            image.style.position = '';
+            image.style.top = '';
+            image.style.left = '';
+            image.style.transform = '';
+            image.style.width = '45%'; 
+            image.style.height = '';
+            image.style.zIndex = '';
+            image.style.boxShadow = '';
+            image.dataset.zoomed = 'false';
+        }
+    </script>
+
+    <script>
+        // Scroll to specific section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Back to Top button functionality
+        const backButton = document.getElementById('backtoTop');
+        backButton.onclick = function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Create and style pop-up
+            const thankYouBox = document.createElement('div');
+            thankYouBox.innerText = "Thank you for visiting!";
+            thankYouBox.style.position = 'fixed';
+            thankYouBox.style.bottom = window.innerWidth < 768 ? '20px' : '50px';
+            thankYouBox.style.right = window.innerWidth < 768 ? '20px' : '50px';
+            thankYouBox.style.backgroundColor = 'rgb(76, 48, 35)';
+            thankYouBox.style.color = 'wheat';
+            thankYouBox.style.fontWeight = 'bold';
+            thankYouBox.style.fontSize = window.innerWidth < 768 ? '14px' : '16px';
+            thankYouBox.style.border = '2px solid black';
+            thankYouBox.style.borderRadius = '5px';
+            thankYouBox.style.padding = '10px 20px';
+            thankYouBox.style.zIndex = '1000';
+
+            document.body.appendChild(thankYouBox);
+
+            setTimeout(() => {
+                document.body.removeChild(thankYouBox);
+            }, 2000);
+        };
+    </script>
+
+    <!-- Footer -->
+    <footer style="margin-top: 20px; text-align: center;">
+        <small>
+            &copy; <script>document.write(new Date().toLocaleString('en-US', {month: 'short'}) + ', ' + new Date().getFullYear());</script> Shradha Birdika - All rights reserved
+        </small>
+    </footer>
+</body>
 </html>
